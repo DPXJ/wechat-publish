@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>暗黑主题效果预览</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: PingFang SC, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #1F2329;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      background: #fff;
+    }
+    /* 二级标题：绿色标签 + 背景条 */
+    h2 {
+      display: block;
+      margin: 20px 0 16px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #10B981;
+      text-align: center;
+      line-height: 1.4;
+    }
+    h2 span.bar {
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #10B981;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+    /* 三级标题 */
+    h3 {
+      display: block;
+      margin: 20px 0 14px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #059669;
+      font-family: inherit;
+    }
+    p { margin: 0 0 1em; }
+    /* 行内代码 */
+    code {
+      background-color: #1E293B;
+      color: #6EE7B7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: Consolas, Monaco, "Lucida Console", monospace;
+    }
+    /* 代码块 - 暗黑主题 */
+    .code-block {
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 8px;
+      margin: 1em 0;
+      overflow-x: auto;
+    }
+    .code-block .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 12px;
+      background: #1E293B;
+      color: #94A3B8;
+      font-size: 12px;
+      border-radius: 8px 8px 0 0;
+    }
+    .code-block .header .dots span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .code-block .header .dots .r { background: #FF5F56; }
+    .code-block .header .dots .y { background: #FFBD2E; }
+    .code-block .header .dots .g { background: #27C93F; }
+    .code-block pre {
+      margin: 0;
+      padding: 8px 12px;
+      background: #0F172A;
+      color: #E2E8F0;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+    /* 引用块 - 普通 */
+    .blockquote {
+      width: 100%;
+      background-image: linear-gradient(to right, #10B981 0px, #10B981 4px, #F1F5F9 4px, #F1F5F9 100%);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+    .blockquote td { padding: 12px 12px 12px 16px; }
+    .blockquote p { margin: 0; }
+    /* 高亮块 - Note */
+    .blockquote.note { background-image: linear-gradient(to right, #10B981 0px, #10B981 4px, #ECFDF5 4px, #ECFDF5 100%); }
+    .blockquote.note td { padding: 12px 12px 12px 16px; }
+    /* Tip */
+    .blockquote.tip { background-image: linear-gradient(to right, #D97706 0px, #D97706 4px, #FEF3C7 4px, #FEF3C7 100%); }
+    /* Warning */
+    .blockquote.warning { background-image: linear-gradient(to right, #FBBF24 0px, #FBBF24 4px, #FFFBEB 4px, #FFFBEB 100%); }
+    /* Caution */
+    .blockquote.caution { background-image: linear-gradient(to right, #F87171 0px, #F87171 4px, #FEF2F2 4px, #FEF2F2 100%); }
+    /* 分割线 */
+    .hr-symbol {
+      text-align: center;
+      color: #10B981;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin: 16px 0;
+    }
+    /* 列表 */
+    ul, ol { padding-left: 20px; margin: 12px 0; }
+    li {
+      color: #10B981;
+      margin-bottom: 6px;
+    }
+    li span.text { color: #1F2329; }
+    ul { list-style-type: none; padding-left: 24px; }
+    ul li::before { content: "▸ "; color: #10B981; font-weight: bold; }
+    /* 表格 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+    th {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+      font-weight: bold;
+    }
+    td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    a { color: #047857; text-decoration: underline; }
+    strong { color: #10B981; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <h2>  暗黑主题效果测试  <span class="bar"></span></h2>
+
+  <h2>  这是二级标题：绿色标签效果  <span class="bar"></span></h2>
+
+  <p>普通正文内容。暗黑主题的核心特点是<strong>深色代码块</strong>与<strong>绿色强调色</strong>形成对比，营造沉稳又带一点科技感的视觉体验。</p>
+
+  <h2>  短标题  <span class="bar"></span></h2>
+
+  <p>这段文字用来测试较短的二级标题，观察绿色底条与标题的搭配效果。</p>
+
+  <h3>■ 三级标题样式展示</h3>
+
+  <p>三级标题使用「■」前缀，搭配绿色主色，风格简洁有力。</p>
+
+  <h3>■ 高亮块展示</h3>
+
+  <table class="blockquote tip">
+    <tr><td><p><strong>TIP</strong> — 前两天一个 AI 同学推荐我一个神器：<strong>星流 Agent</strong>。一句话总结：它解决了「AI 图片无法编辑」的痛点，是设计师和产品经理的实战利器。</p></td></tr>
+  </table>
+
+  <div class="hr-symbol">— ◆ —</div>
+
+  <h3>■ 引用块样式</h3>
+
+  <table class="blockquote">
+    <tr><td><p>设计不是装饰，而是关于事物如何运作。暗黑风格不是简单地把颜色变深，而是通过对比度和层次感营造氛围。</p></td></tr>
+  </table>
+
+  <table class="blockquote note">
+    <tr><td><p><strong>NOTE</strong> — 这是一条 Note 提示信息，使用绿色左侧边框。</p></td></tr>
+  </table>
+
+  <table class="blockquote warning">
+    <tr><td><p><strong>WARNING</strong> — 这是一条 Warning 提示，用于展示需要注意的警告信息。</p></td></tr>
+  </table>
+
+  <table class="blockquote caution">
+    <tr><td><p><strong>CAUTION</strong> — 这是一条 Caution 提示，用于展示危险操作的提醒。</p></td></tr>
+  </table>
+
+  <div class="hr-symbol">— ◆ —</div>
+
+  <h3>■ 代码块展示</h3>
+
+  <div class="code-block">
+    <div class="header">
+      <span class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></span>
+      <span>javascript</span>
+    </div>
+    <pre>function createDarkTheme(name) {
+  return {
+    name,
+    colors: {
+      primary: '#10B981',
+      codeBg: '#0F172A'
+    },
+    apply() {
+      console.log(`Theme "${this.name}" applied.`);
+    }
+  };
+}
+
+const theme = createDarkTheme('dark');
+theme.apply();</pre>
+  </div>
+
+  <div class="code-block">
+    <div class="header">
+      <span class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></span>
+      <span>python</span>
+    </div>
+    <pre>class DarkTheme:
+    def __init__(self):
+        self.colors = {
+            "primary": "#10B981",
+            "code_bg": "#0F172A",
+        }
+
+    def render(self, text):
+        for k, v in self.colors.items():
+            print(f"  {k}: {v}")
+
+theme = DarkTheme()
+theme.render("Hello Dark World")</pre>
+  </div>
+
+  <div class="hr-symbol">— ◆ —</div>
+
+  <h3>■ 行内代码与列表</h3>
+
+  <p>这是包含<code>行内代码</code>的文字，使用 <code>npm install</code> 安装依赖。</p>
+
+  <p>无序列表（列表符 ▸）：</p>
+  <ul>
+    <li><span class="text">二级标题：绿色实心底条，居中</span></li>
+    <li><span class="text">三级标题：■ 前缀 + 绿色</span></li>
+    <li><span class="text">代码块：深色 Slate 配色</span></li>
+    <li><span class="text">高亮块：Note / Tip / Warning / Caution 多色左边框</span></li>
+  </ul>
+
+  <p>有序列表：</p>
+  <ol>
+    <li><span class="text">选择 dark 主题</span></li>
+    <li><span class="text">预处理脚本可做标题样式增强</span></li>
+    <li><span class="text">发布到公众号草稿箱</span></li>
+  </ol>
+
+  <h3>■ 表格样式</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>元素</th>
+        <th>配色</th>
+        <th>效果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>二级标题</td><td><code>#10B981</code> 绿色</td><td>底条 + 标签</td></tr>
+      <tr><td>三级标题</td><td><code>#059669</code> 绿色</td><td>■ 前缀</td></tr>
+      <tr><td>代码块</td><td><code>#0F172A</code> 深色</td><td>暗黑沉浸</td></tr>
+      <tr><td>行内代码</td><td><code>#1E293B</code> / <code>#6EE7B7</code></td><td>高对比</td></tr>
+    </tbody>
+  </table>
+
+  <div class="hr-symbol">— ◆ —</div>
+
+  <h2>  总结  <span class="bar"></span></h2>
+
+  <p>暗黑主题通过<strong>绿色标签标题</strong>、<strong>暗色代码块</strong>、<strong>多色高亮块</strong>的组合，在白色背景上创造出清晰又专业的阅读体验。可直接用 <code>theme: "dark"</code> 在 config 中启用。</p>
+
+</body>
+</html>

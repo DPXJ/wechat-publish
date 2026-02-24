@@ -3,3 +3,5 @@ config.json
 wechat-token.json
 license-key.txt
 _processed_*.md
+.config-dark-publish.json
+*.tmp
